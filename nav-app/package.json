@@ -1,6 +1,7 @@
 {
   "name": "attack-navigator",
   "description": "Web app that provides basic navigation and annotation of ATT&CK matrices",
+  "main": "main.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/mitre-attack/attack-navigator.git"
@@ -15,6 +16,17 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "postinstall": "node patch-webpack.js"
+  },
+  "build": {
+    "directories":{
+      "output": "bin"      
+    },
+    "win": {
+      "target": [
+        "portable"
+      ],
+      "asar":true
+    }
   },
   "dependencies": {
     "@angular/animations": "^11.0.3",
@@ -53,6 +65,8 @@
     "@types/jasminewd2": "^2.0.8",
     "@types/node": "^12.11.1",
     "codelyzer": "^6.0.0",
+    "electron": "^11.2.1",
+    "electron-builder": "^22.9.1",
     "exceljs": "^2.0.1",
     "jasmine-core": "~3.6.0",
     "jasmine-spec-reporter": "~5.0.0",
