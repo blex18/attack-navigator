@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
 import { DataService, Technique, Tactic, Matrix, Domain } from "./data.service";
-declare var tinygradient: any; //use tinygradient
-// import * as tinygradient from 'tinygradient'
-declare var tinycolor: any; //use tinycolor2
-// import * as tinycolor from 'tinycolor2';
+// declare var tinygradient: any; //use tinygradient
+import * as tinygradient from 'tinygradient'
+// declare var tinycolor: any; //use tinycolor2
+import * as tinycolor from 'tinycolor2';
 // import * as FileSaver from 'file-saver';
 declare var math: any; //use mathjs
 import * as globals from './globals'; //global variables
@@ -87,7 +87,7 @@ export class ViewModelsService {
             //attempt to evaluate without a scope to catch the case of a static assignment
             try {
                 // evaluate with an empty scope
-                let mathResult = math.eval(scoreExpression, {});
+                let mathResult = math.evaluate(scoreExpression, {});
                 // if it didn't except after this, it evaluated to a single result.
                 console.log("score expression evaluated to single result to be applied to all techniques");
                 if (is.boolean(mathResult)) {
@@ -128,7 +128,7 @@ export class ViewModelsService {
                     //did at least one technique have a score for this technique?
                     if (misses < scoreVariables.size) { 
                         // console.log(scope);
-                        let mathResult = math.eval(scoreExpression, scope);
+                        let mathResult = math.evaluate(scoreExpression, scope);
                         if (is.boolean(mathResult)) {
                             mathResult = mathResult ? "1" : "0"; //boolean to binary
                         } else if (is.not.number(mathResult)) { //user inputted something weird, complain about it

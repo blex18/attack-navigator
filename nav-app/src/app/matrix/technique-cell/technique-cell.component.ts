@@ -3,7 +3,8 @@ import { Technique, Tactic, Matrix } from '../../data.service';
 import { ViewModel } from '../../viewmodels.service';
 import {ConfigService} from '../../config.service';
 
-declare var tinycolor: any; //use tinycolor2
+//declare var tinycolor: any; //use tinycolor2
+import * as tinycolor from 'tinycolor2';
 
 @Component({
     selector: 'technique-cell',

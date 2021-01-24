@@ -4,7 +4,8 @@ import { ConfigService } from "../config.service";
 import { Technique, DataService, Tactic, Matrix } from '../data.service';
 import * as is from 'is_js';
 declare var d3: any; //d3js
-declare var tinycolor: any; //use tinycolor2
+// declare var tinycolor: any; //use tinycolor2
+import * as tinycolor from 'tinycolor2';
 import { ColorPickerModule } from 'ngx-color-picker';
 
 @Component({

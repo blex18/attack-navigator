@@ -11,8 +11,10 @@ import {MatMenuTrigger} from '@angular/material/menu';
 import * as Excel from 'exceljs/dist/es5/exceljs.browser';
 import * as is from 'is_js';
 
-declare var tinygradient: any; //use tinygradient
-declare var tinycolor: any; //use tinycolor2
+//declare var tinygradient: any; //use tinygradient
+import * as tinygradient from 'tinygradient'
+// declare var tinycolor: any; //use tinycolor2
+import * as tinycolor from 'tinycolor2';
 
 import * as FileSaver from 'file-saver';
 import { ColorPickerModule } from 'ngx-color-picker';

@@ -462,7 +462,7 @@ export class TabsComponent implements AfterContentInit {
                 // console.log(noMatch)
                 if (noMatch.length > 0) return noMatch;
             }
-            let result = math.eval(self.scoreExpression, scope)
+            let result = math.evaluate(self.scoreExpression, scope)
             // console.log(result)
             return null
         } catch(err) {
